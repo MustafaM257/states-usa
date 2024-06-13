@@ -1,5 +1,9 @@
 import Image from "next/image";
-
+import Hero from "@/components/Hero";
 export default function Home() {
-  return <main className="bg-red-500">Testing TailwindCSS</main>;
+  return (
+    <main>
+      <Hero />
+    </main>
+  );
 }
