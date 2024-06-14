@@ -11,7 +11,7 @@ const Header = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "fixed md:top-10 inset-x-0 max-w-2xl mx-auto z-50 bg-neutral-900 rounded-full px-4 py-2 text-white shadow-lg",
+        "fixed md:top-10 inset-x-0 max-w-2xl mx-auto z-50 bg-gradient-to-r from-red-600 to-blue-600 rounded-full px-4 py-2 text-red-100 shadow-lg",
         className
       )}
     >
