@@ -7,7 +7,8 @@ const StateFlag = ({ abbreviation }: { abbreviation: string }) => {
       <Image
         src={`/images/flags/${abbreviation}.png`}
         alt={`${abbreviation} state flag`}
-        layout="fill"
+        fill={true}
+        sizes="(max-width: 768px) 100vw, 33vw"
       />
     </div>
   );

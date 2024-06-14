@@ -24,7 +24,6 @@ export default function StateList() {
           abbreviation={state.postal_abbreviation}
           description={"A description for each state to go here"}
           header={<StateFlag abbreviation={state.postal_abbreviation} />}
-          className={i === 3 || i === 6 ? "md:col-span-2" : ""}
         />
       ))}
     </BentoGrid>
