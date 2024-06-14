@@ -9,6 +9,7 @@ const StateFlag = ({ abbreviation }: { abbreviation: string }) => {
         alt={`${abbreviation} state flag`}
         fill={true}
         sizes="(max-width: 768px) 100vw, 33vw"
+        className="rounded-md"
       />
     </div>
   );

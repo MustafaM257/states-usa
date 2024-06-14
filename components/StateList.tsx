@@ -1,12 +1,12 @@
 "use client";
 import { cn } from "@/utils/cn";
 import React from "react";
-import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
+import { Grid, GridItem } from "@/components/ui/grid";
 import states from "@/json/states.json";
 import StateFlag from "./StateFlag";
 export default function StateList() {
   return (
-    <BentoGrid className="max-w-4xl mx-auto">
+    <Grid className="max-w-4xl mx-auto">
       {/* {items.map((item, i) => (
         <BentoGridItem
           key={i}
@@ -18,7 +18,8 @@ export default function StateList() {
         />
       ))} */}
       {states.map((state, i) => (
-        <BentoGridItem
+        <GridItem
+          className="rounded-md border-black"
           key={i}
           name={state.name}
           abbreviation={state.postal_abbreviation}
@@ -26,6 +27,6 @@ export default function StateList() {
           header={<StateFlag abbreviation={state.postal_abbreviation} />}
         />
       ))}
-    </BentoGrid>
+    </Grid>
   );
 }
