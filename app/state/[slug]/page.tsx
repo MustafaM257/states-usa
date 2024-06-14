@@ -67,10 +67,15 @@ const page = ({ params }: { params: { slug: string } }) => {
             </div>
           </div>
         </div>
-        <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-          <StateFlag
-            abbreviation={state.postal_abbreviation}
-            className="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+        <div className=" relative -ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+          <Image
+            src={`/images/flags/${state.postal_abbreviation}.png`}
+            alt={`${state.postal_abbreviation} flag`}
+            layout="responsive"
+            width={640} // Specify the width of the image
+            height={480} // Specify the height of the image
+            objectFit="cover"
+            className="rounded-xl"
           />
         </div>
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
