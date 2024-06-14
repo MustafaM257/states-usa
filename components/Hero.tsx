@@ -16,7 +16,11 @@ export default function Example() {
         star on the flag represents a state.{" "}
       </p>
       <div className="flex flex-col items-center">
-        <Image src={usa_map} alt="USA Flag" className="   md:max-w-2xl" />
+        <Image
+          src={usa_map}
+          alt="USA Flag"
+          className=" select-none md:max-w-2xl"
+        />
       </div>
     </div>
   );
