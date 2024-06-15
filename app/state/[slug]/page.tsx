@@ -3,12 +3,14 @@ import states from "@/json/states.json";
 import StateFlag from "@/components/StateFlag";
 import { cn } from "@/utils/cn";
 import Image from "next/image";
+import { after } from "node:test";
 
 const page = ({ params }: { params: { slug: string } }) => {
   const state = states.find(
     (state) =>
       state.postal_abbreviation.toLowerCase() === params.slug.toLowerCase()
   );
+
   if (!state) {
     return (
       <div className="space-y-10 mt-52">
@@ -16,6 +18,8 @@ const page = ({ params }: { params: { slug: string } }) => {
       </div>
     );
   }
+  const [beforeDot, afterDot] = state.description.split(/\.(.+)/, 2);
+
   return (
     <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -59,8 +63,9 @@ const page = ({ params }: { params: { slug: string } }) => {
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 {state.name}
               </h1>
-              <p className="mt-6 text-lg font-sans leading-8 text-gray-700">
-                {state.description}
+              <p className="mt-6 text-md font-sans leading-8 text-gray-700">
+                {beforeDot}
+                {/*  Everything before the . */}
               </p>
             </div>
           </div>
@@ -80,12 +85,8 @@ const page = ({ params }: { params: { slug: string } }) => {
           <div className="lg:pr-4">
             <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
               <p>
-                Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget
-                risus enim. Mattis mauris semper sed amet vitae sed turpis id.
-                Id dolor praesent donec est. Odio penatibus risus viverra tellus
-                varius sit neque erat velit. Faucibus commodo massa rhoncus,
-                volutpat. Dignissim sed eget risus enim. Mattis mauris semper
-                sed amet vitae sed turpis id.
+                {afterDot}
+                {/* Everything after the . */}
               </p>
               <ul role="list" className="mt-8 space-y-8 text-gray-600">
                 <li className="flex gap-x-3">
