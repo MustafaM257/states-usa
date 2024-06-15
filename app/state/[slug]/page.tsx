@@ -5,6 +5,7 @@ import { cn } from "@/utils/cn";
 import Image from "next/image";
 import { after } from "node:test";
 import { getStateByAbbreviation } from "@/utils/state";
+import { getCountiesByState } from "@/utils/county";
 const page = ({ params }: { params: { slug: string } }) => {
   const state = getStateByAbbreviation(params.slug);
 
@@ -16,7 +17,7 @@ const page = ({ params }: { params: { slug: string } }) => {
     );
   }
   const [beforeDot, afterDot] = state.description.split(/\.(.+)/, 2);
-
+  const counties = getCountiesByState(state?.name);
   return (
     <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
       <div className="absolute inset-0 -z-10 overflow-hidden">
