@@ -143,6 +143,7 @@ const page = ({ params }: { params: { slug: string } }) => {
           </div>
         </div>
       </div>
+      {counties.length}
     </div>
   );
 };
