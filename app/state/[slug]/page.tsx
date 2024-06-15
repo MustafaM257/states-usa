@@ -4,12 +4,9 @@ import StateFlag from "@/components/StateFlag";
 import { cn } from "@/utils/cn";
 import Image from "next/image";
 import { after } from "node:test";
-
+import { getStateByAbbreviation } from "@/utils/state";
 const page = ({ params }: { params: { slug: string } }) => {
-  const state = states.find(
-    (state) =>
-      state.postal_abbreviation.toLowerCase() === params.slug.toLowerCase()
-  );
+  const state = getStateByAbbreviation(params.slug);
 
   if (!state) {
     return (
