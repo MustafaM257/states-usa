@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={sourceCodePro.className}>
         <Header />
-        <div className="max-w-7xl w-full  px-4 mx-auto py-10">{children}</div>
+        <div className="max-w-7xl w-full  px-4 mx-auto py-10 ">{children}</div>
         <Footer />
       </body>
     </html>

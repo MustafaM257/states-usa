@@ -1,6 +1,7 @@
 import React from "react";
 import { cn } from "@/utils/cn";
 import { IconHome, IconMail, IconInfoOctagon } from "@tabler/icons-react";
+
 import Link from "next/link";
 const navItems = [
   { label: "Home", href: "/", icon: IconHome },
@@ -11,7 +12,7 @@ const Header = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "fixed md:top-10 inset-x-0 max-w-2xl mx-auto z-50 bg-neutral-800 rounded-full px-4 py-2 text-red-100 shadow-lg",
+        "fixed md:top-10 inset-x-0 md:max-w-2xl mx-auto z-50 bg-white/90 md:rounded-full px-4 py-2 text-white shadow-lg",
         className
       )}
     >
@@ -20,10 +21,12 @@ const Header = ({ className }: { className?: string }) => {
           <Link
             key={item.label}
             href={item.href}
-            className="flex items-center space-x-2 group"
+            className="flex items-center space-x-2 group px-2 py-4"
           >
-            <item.icon className="shadow-md group-hover:text-red-600" />
-            <span className="text-2xl hidden md:flex">{item.label}</span>
+            <button className="px-4 py-2 rounded-full border border-black bg-white text-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition duration-200">
+              <item.icon className="  md:hidden" />
+              <span className="hidden md:flex">{item.label}</span>
+            </button>
           </Link>
         ))}
       </nav>
