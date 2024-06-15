@@ -42,7 +42,7 @@ export const GridItem = ({
       {header}
       <div className="group-hover/bento:translate-x-2 transition duration-200">
         <span className="font-semibold text-red-600">{abbreviation}</span>
-        <div className="font-sans text-blue-600 font-bold  dark:text-neutral-200 mb-2 mt-2">
+        <div className=" text-blue-600 font-bold  dark:text-neutral-200 mb-2 mt-2">
           {name}
         </div>
         <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300">
