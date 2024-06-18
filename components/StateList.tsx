@@ -21,7 +21,7 @@ export default function StateList() {
       {states.map((state, i) => (
         <Link href={`/state/${state.postal_abbreviation}`} key={i}>
           <GridItem
-            className="rounded-md border-black"
+            className="rounded-md border-black max-w-sm mx-auto"
             key={i}
             name={state.name}
             abbreviation={state.postal_abbreviation}

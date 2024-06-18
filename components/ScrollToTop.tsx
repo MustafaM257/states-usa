@@ -10,13 +10,10 @@ function scrollToTop() {
 export default function ScrollToTopButton() {
   return (
     <button
-      className="fixed bottom-0 right-0 p-4 md:p-10 "
       onClick={scrollToTop}
+      className=" fixed bottom-0 right-0 m-5 px-4 py-2 rounded-full border border-black bg-white text-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition duration-200"
     >
-      <IconArrowBarUp
-        size={32}
-        className="hover:bg-neutral-200 rounded-full   transition-all"
-      />
+      <IconArrowBarUp size={32} />
     </button>
   );
 }

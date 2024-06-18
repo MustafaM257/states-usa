@@ -5,7 +5,7 @@ import { IconHome, IconMail, IconInfoOctagon } from "@tabler/icons-react";
 import Link from "next/link";
 const navItems = [
   { label: "Home", href: "/", icon: IconHome },
-  { label: "About", href: "/about", icon: IconInfoOctagon },
+  { label: "Zip", href: "/zip", icon: IconInfoOctagon },
   { label: "Contact", href: "/contact", icon: IconMail },
 ];
 const Header = ({ className }: { className?: string }) => {
