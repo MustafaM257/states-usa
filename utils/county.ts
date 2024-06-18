@@ -8,7 +8,7 @@ type County = {
 };
 
 // Function to get counties by state name
-export const getCountiesByState = (name: string): County[] | undefined => {
+export const getCountiesByState = (name: string): County[] => {
   return counties.filter(
     (county) => county.state.toLowerCase() === name.toLowerCase()
   );

@@ -135,15 +135,37 @@ const page = ({ params }: { params: { slug: string } }) => {
                     {state.representatives}
                   </span>
                 </li>
+                <li className="flex gap-x-3">
+                  <span>
+                    <strong className="font-semibold text-gray-900">
+                      Number of Counties:
+                    </strong>{" "}
+                    {counties.length}
+                  </span>
+                </li>
               </ul>
-              <p className="mt-8"></p>
-              <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900"></h2>
-              <p className="mt-6"></p>
+              <h1 className="text-2xl mt-8 mb-4 text-gray-900 font-semibold w-full text-left">
+                List of counties:{" "}
+              </h1>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {counties.map((county) => (
+                  <div
+                    key={county.county}
+                    className="relative flex items-center space-x-3 rounded-full border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-offset-2 hover:border-gray-400"
+                  >
+                    <div className="min-w-0 flex-1">
+                      <span className="absolute inset-0" aria-hidden="true" />
+                      <p className="text-sm font-medium text-gray-900">
+                        {county.county}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
-      {counties.length}
     </div>
   );
 };
