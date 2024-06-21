@@ -6,7 +6,7 @@ import Link from "next/link";
 const navItems = [
   { label: "Home", href: "/", icon: IconHome },
   { label: "Zip", href: "/zip", icon: IconInfoOctagon },
-  { label: "Contact", href: "/contact", icon: IconMail },
+  { label: "Search", href: "/search", icon: IconMail },
 ];
 const Header = ({ className }: { className?: string }) => {
   return (
