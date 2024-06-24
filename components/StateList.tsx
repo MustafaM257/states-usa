@@ -5,6 +5,7 @@ import { Grid, GridItem } from "@/components/ui/grid";
 import states from "@/json/states.json";
 import StateFlag from "./StateFlag";
 import Link from "next/link";
+import StateItem from "./StateItem";
 export default function StateList() {
   return (
     <Grid className="max-w-4xl mx-auto">
@@ -19,16 +20,7 @@ export default function StateList() {
         />
       ))} */}
       {states.map((state, i) => (
-        <Link href={`/state/${state.postal_abbreviation}`} key={i}>
-          <GridItem
-            className="rounded-md border-black max-w-sm mx-auto"
-            key={i}
-            name={state.name}
-            abbreviation={state.postal_abbreviation}
-            description={"A description for each state to go here"}
-            header={<StateFlag abbreviation={state.postal_abbreviation} />}
-          />
-        </Link>
+        <StateItem state={state} key={i} />
       ))}
     </Grid>
   );

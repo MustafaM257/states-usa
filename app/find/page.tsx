@@ -1,14 +1,20 @@
 "use client";
 import React, { useState } from "react";
 import findLocation from "@/utils/find";
+
 const Page = () => {
   const [search, setSearch] = useState("");
+  const [result, setResult] = useState({ city: "", state: "" });
 
   const handleSearch = (e: any) => {
     e.preventDefault();
     console.log("Searching for:", search);
     // Add your search logic here
-    findLocation(search);
+    const res = findLocation(search);
+    setResult({
+      city: res.city,
+      state: res.state,
+    });
   };
 
   return (
@@ -31,6 +37,19 @@ const Page = () => {
             placeholder="Jane Smith"
           />
         </form>
+        {result.city !== "Not Found" && result.state !== "Not Found" ? ( // If the result is not empty
+          <div className="mt-4">
+            <h2 className="text-2xl font-bold text-gray-900">
+              {result.city} {result.state}
+            </h2>
+          </div>
+        ) : (
+          <div className="mt-4">
+            <h2 className="text-2xl font-bold text-red-600">
+              Location not found
+            </h2>
+          </div>
+        )}
       </div>
     </div>
   );
