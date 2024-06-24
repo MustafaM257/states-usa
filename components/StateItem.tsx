@@ -17,7 +17,7 @@ const StateItem = ({
     <div className={className}>
       <Link href={`/state/${state.postal_abbreviation}`}>
         <GridItem
-          className="rounded-md border-black max-w-sm mx-auto"
+          className="rounded-md border-black max-w-xs mx-auto"
           name={state.name}
           abbreviation={state.postal_abbreviation}
           description={"A description for each state to go here"}

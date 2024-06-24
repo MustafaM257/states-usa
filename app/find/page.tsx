@@ -1,12 +1,14 @@
 "use client";
 import React, { useState } from "react";
 import findLocation from "@/utils/find";
+import StateItem from "@/components/StateItem";
 
 const Page = () => {
   const [search, setSearch] = useState("");
   const [result, setResult] = useState({ city: "", state: "" });
+  const [searchPerformed, setSearchPerformed] = useState(false);
 
-  const handleSearch = (e: any) => {
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Searching for:", search);
     // Add your search logic here
@@ -15,6 +17,7 @@ const Page = () => {
       city: res.city,
       state: res.state,
     });
+    setSearchPerformed(true); // Set searchPerformed to true after the search
   };
 
   return (
@@ -24,7 +27,7 @@ const Page = () => {
           htmlFor="search"
           className="ml-px block pl-4 text-sm font-medium leading-6 text-gray-900"
         >
-          Search for a city, state, or zip code
+          Search for a city or state by ZIP code
         </label>
         <form className="mt-2" onSubmit={handleSearch}>
           <input
@@ -37,19 +40,26 @@ const Page = () => {
             placeholder="Jane Smith"
           />
         </form>
-        {result.city !== "Not Found" && result.state !== "Not Found" ? ( // If the result is not empty
-          <div className="mt-4">
-            <h2 className="text-2xl font-bold text-gray-900">
-              {result.city} {result.state}
-            </h2>
-          </div>
-        ) : (
-          <div className="mt-4">
-            <h2 className="text-2xl font-bold text-red-600">
-              Location not found
-            </h2>
-          </div>
-        )}
+        {searchPerformed && // Only render the result section after a search has been performed
+          (result.city !== "Not Found" && result.state ? (
+            <div className="mt-4">
+              <h2 className="text-2xl font-bold text-gray-900">
+                {result.city} {result.state}
+              </h2>
+              <StateItem
+                state={{
+                  postal_abbreviation: result.state,
+                  name: result.state,
+                }}
+              />
+            </div>
+          ) : (
+            <div className="mt-4">
+              <h2 className="text-2xl font-bold text-red-600">
+                Location not found
+              </h2>
+            </div>
+          ))}
       </div>
     </div>
   );
