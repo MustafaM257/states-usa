@@ -21,7 +21,10 @@ const Page = () => {
   };
 
   return (
-    <div className="space-y-10 pt-32">
+    <div
+      className="space-y-10 pt-32 "
+      style={{ minHeight: `calc(100vh - 25vh)` }}
+    >
       <div>
         <label
           htmlFor="search"

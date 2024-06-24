@@ -20,7 +20,7 @@ const StateItem = ({
           className="rounded-md border-black max-w-xs mx-auto"
           name={state.name}
           abbreviation={state.postal_abbreviation}
-          description={"A description for each state to go here"}
+          description={""}
           header={<StateFlag abbreviation={state.postal_abbreviation} />}
         />
       </Link>
