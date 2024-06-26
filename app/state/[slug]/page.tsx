@@ -70,7 +70,7 @@ const page = ({ params }: { params: { slug: string } }) => {
         </div>
         <div className=" relative -ml-12 -mt-12 p-12 lg:sticky lg:top-12 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
           <Image
-            src={`/images/flags/${state.postal_abbreviation}.png`}
+            src={`/images/flags/${state.postal_abbreviation.toLowerCase()}.png`}
             alt={`${state.postal_abbreviation} flag`}
             layout="responsive"
             width={640} // Specify the width of the image
