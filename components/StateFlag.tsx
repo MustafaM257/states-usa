@@ -22,6 +22,7 @@ const StateFlag = ({
         fill={true}
         sizes="(max-width: 768px) 100vw, 33vw"
         className="rounded-md"
+        unoptimized
       />
     </div>
   );
