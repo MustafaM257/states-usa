@@ -76,6 +76,7 @@ const page = ({ params }: { params: { slug: string } }) => {
             width={640} // Specify the width of the image
             height={480} // Specify the height of the image
             objectFit="cover"
+            unoptimized
             className="rounded-xl"
           />
         </div>
