@@ -17,7 +17,7 @@ const StateFlag = ({
       )}
     >
       <Image
-        src={`/images/flags/${abbreviation}.png`}
+        src={`/images/flags/${abbreviation.toLowerCase()}.png`}
         alt={`${abbreviation} state flag`}
         fill={true}
         sizes="(max-width: 768px) 100vw, 33vw"
