@@ -1,12 +1,12 @@
 import React from "react";
 import { cn } from "@/utils/cn";
-import { IconHome, IconMail, IconInfoOctagon } from "@tabler/icons-react";
+import { IconHome, IconSearch, IconZip } from "@tabler/icons-react";
 
 import Link from "next/link";
 const navItems = [
   { label: "Home", href: "/", icon: IconHome },
-  { label: "Zip", href: "/zip", icon: IconInfoOctagon },
-  { label: "Find", href: "/find", icon: IconMail },
+  { label: "Zip", href: "/zip", icon: IconZip },
+  { label: "Find", href: "/find", icon: IconSearch },
 ];
 const Header = ({ className }: { className?: string }) => {
   return (
