@@ -1,6 +1,6 @@
 # USA States Information Project
 
-<img width="859" alt="Screenshot 2024-07-03 at 2 40 00 PM" src="https://github.com/MustafaM257/states-usa/assets/124741766/ee7e63c2-4a16-4d41-b6ee-01d5118f1086">
+<img width="859" height="600" alt="Screenshot 2024-07-03 at 2 40 00 PM" src="https://github.com/MustafaM257/states-usa/assets/124741766/ee7e63c2-4a16-4d41-b6ee-01d5118f1086">
 
 
 Welcome to the USA States Information Project! This project provides comprehensive information about the states of America through an easy-to-use web application. The application consists of three main sections: Home, Zip, and Find.
